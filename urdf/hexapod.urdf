@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hexapod">
+    <link
+    name="dummy_link" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </link>
+  <joint
+    name="dummy_joint"
+    type="fixed">
+    <parent
+      link="dummy_link" />
+    <child
+      link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="3.20145534604253E-18 -1.38244662670018E-17 0.0227176528069366"
+        rpy="0 0 0" />
+      <mass
+        value="0.258787611019616" />
+      <inertia
+        ixx="0.000389103015670694"
+        ixy="-5.12225850354026E-19"
+        ixz="-1.521049054889E-20"
+        iyy="0.0022209092656707"
+        iyz="-4.42660169786293E-21"
+        izz="0.00255301401180441" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rf1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318491834 0.0105128667638348 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.01402307191712E-09"
+        ixz="-8.74038380890282E-23"
+        iyy="2.74337420831994E-07"
+        iyz="6.94954202680523E-25"
+        izz="3.41986869471007E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf1_joint"
+    type="revolute">
+    <origin
+      xyz="0.0784707061381557 -0.0296916185387617 0.055"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="0.55" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf2_Link">
+    <inertial>
+      <origin
+        xyz="0.000328769051092789 0.0089941765653241 -0.0443120771823383"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119691777532889" />
+      <inertia
+        ixx="4.41875479028849E-06"
+        ixy="-1.43654444306221E-09"
+        ixz="2.95096244084679E-08"
+        iyy="4.27723331847433E-06"
+        iyz="1.93617938295013E-07"
+        izz="4.41570451299138E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="3.14159265358979 -0.00741924340161995 1.5707963267949" />
+    <parent
+      link="rf1_Link" />
+    <child
+      link="rf2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="0.55" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rf3_Link">
+    <inertial>
+      <origin
+        xyz="-8.47894252503645E-07 0.0135354903200816 -0.025481959853987"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179146971272" />
+      <inertia
+        ixx="3.03427546578837E-06"
+        ixy="2.11922824818498E-14"
+        ixz="-1.84379723565689E-13"
+        iyy="2.9485405148425E-06"
+        iyz="2.41909286224138E-07"
+        izz="1.65256738841228E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rf3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rf3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065"
+      rpy="0 -1.56532623433024 3.14159265358979" />
+    <parent
+      link="rf2_Link" />
+    <child
+      link="rf3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="1.6" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rm1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318491831 0.0105128667638348 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.0140230719171E-09"
+        ixz="-1.12629119011893E-23"
+        iyy="2.74337420831993E-07"
+        iyz="3.9017611557146E-24"
+        izz="3.41986869471007E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rm1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.035 0.055"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rm1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="0.55" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rm2_Link">
+    <inertial>
+      <origin
+        xyz="0.000819432470825547 0.0089941765653241 -0.044305719763121"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119691777532889" />
+      <inertia
+        ixx="4.41761360942237E-06"
+        ixy="-3.58045747364913E-09"
+        ixz="7.35404807416639E-08"
+        iyy="4.27723331847435E-06"
+        iyz="1.9359015990961E-07"
+        izz="4.42711632165276E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rm2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="3.14159265358979 -0.0184928295817374 1.5707963267949" />
+    <parent
+      link="rm1_Link" />
+    <child
+      link="rm2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="0.55" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rm3_Link">
+    <inertial>
+      <origin
+        xyz="-3.8450807626586E-05 0.013535490315758 -0.0247628068884473"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179156645725" />
+      <inertia
+        ixx="3.03427550910364E-06"
+        ixy="1.24988919508864E-14"
+        ixz="-1.50012267511426E-13"
+        iyy="2.94854055772639E-06"
+        iyz="2.41909291361396E-07"
+        izz="1.6525673984922E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rm3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rm3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065"
+      rpy="0 -1.52955519083945 3.14159265358979" />
+    <parent
+      link="rm2_Link" />
+    <child
+      link="rm3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.55" 
+      upper="0.55" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rb1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318492251 0.0105128667638348 -1.12063136548102E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.0140230719171E-09"
+        ixz="-2.54719402989727E-24"
+        iyy="2.74337420831993E-07"
+        iyz="-5.64206701275276E-24"
+        izz="3.41986869471006E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rb1_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0784707061381557 -0.0296916185387617 0.055"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rb1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rb2_Link">
+    <inertial>
+      <origin
+        xyz="0.000367377119521943 0.00899417656532391 -0.0443117739134239"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119691777532889" />
+      <inertia
+        ixx="4.41870034887128E-06"
+        ixy="-1.60523918918751E-09"
+        ixz="3.2974816464094E-08"
+        iyy="4.27723331847434E-06"
+        iyz="1.93616613173341E-07"
+        izz="4.41624892716369E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rb2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="3.14159265358979 -0.00829052275834918 1.5707963267949" />
+    <parent
+      link="rb1_Link" />
+    <child
+      link="rb2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="rb3_Link">
+    <inertial>
+      <origin
+        xyz="-2.58287458214518E-05 0.0135354903114685 -0.0254259451202542"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179166584072" />
+      <inertia
+        ixx="3.03427555339794E-06"
+        ixy="5.61729355748622E-15"
+        ixz="-1.22833830874616E-13"
+        iyy="2.9485406016922E-06"
+        iyz="2.41909296620173E-07"
+        izz="1.65256740981015E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/rb3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rb3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065"
+      rpy="0 -1.51870135423192 3.14159265358979" />
+    <parent
+      link="rb2_Link" />
+    <child
+      link="rb3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318491834 0.0105128667638348 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.01402307191712E-09"
+        ixz="-7.41422845030475E-23"
+        iyy="2.74337420831994E-07"
+        iyz="-9.39559560790412E-25"
+        izz="3.41986869471007E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf1_joint"
+    type="revolute">
+    <origin
+      xyz="0.0784707061381558 0.0296916185387616 0.055"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lf1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf2_Link">
+    <inertial>
+      <origin
+        xyz="-0.00282474457879712 0.00735648927476751 -0.0442231736917084"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119691777532889" />
+      <inertia
+        ixx="4.40281099541734E-06"
+        ixy="1.23424713006902E-08"
+        ixz="-2.53037595237208E-07"
+        iyy="4.27723331847433E-06"
+        iyz="1.93229482977467E-07"
+        izz="4.57514246170286E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="0 -0.063788 -1.5708" />
+    <parent
+      link="lf1_Link" />
+    <child
+      link="lf2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lf3_Link">
+    <inertial>
+      <origin
+        xyz="8.01435907479553E-05 0.0145354903178246 -0.0218194583127338"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179151893951" />
+      <inertia
+        ixx="3.03427548788298E-06"
+        ixy="1.6003240678852E-14"
+        ixz="-1.63856470902942E-13"
+        iyy="2.94854053668662E-06"
+        iyz="2.41909288844423E-07"
+        izz="1.6525673932999E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lf3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lf3_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.00300000000000004 -0.065"
+      rpy="0 1.51956873083506 -3.14159265358977" />
+    <parent
+      link="lf2_Link" />
+    <child
+      link="lf3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lm1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318492437 0.0105128667638348 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.0140230719171E-09"
+        ixz="-1.47087986460747E-24"
+        iyy="2.74337420831993E-07"
+        iyz="-1.33561032851435E-24"
+        izz="3.41986869471006E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lm1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.035 0.055"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lm1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lm2_Link">
+    <inertial>
+      <origin
+        xyz="-0.000720126198541483 0.00899417656532349 -0.0443074451030594"
+        rpy="0 0 0" />
+      <mass
+        value="0.011969177753289" />
+      <inertia
+        ixx="4.41792327774807E-06"
+        ixy="3.14651617666753E-09"
+        ixz="-6.46313018063495E-08"
+        iyy="4.27723331847436E-06"
+        iyz="1.93597699174083E-07"
+        izz="4.42401963839591E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lm2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="0 -0.016252 -1.5708" />
+    <parent
+      link="lm1_Link" />
+    <child
+      link="lm2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lm3_Link">
+    <inertial>
+      <origin
+        xyz="-4.47134395803461E-06 0.0135354903178655 -0.0249078803668234"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179151800615" />
+      <inertia
+        ixx="3.03427548746587E-06"
+        ixy="1.60735236491505E-14"
+        ixz="-1.64134178409104E-13"
+        iyy="2.94854053627325E-06"
+        iyz="2.41909288794903E-07"
+        izz="1.6525673931994E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lm3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lm3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065"
+      rpy="0 1.56690433227357 -3.14159265358975" />
+    <parent
+      link="lm2_Link" />
+    <child
+      link="lm3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lb1_Link">
+    <inertial>
+      <origin
+        xyz="-0.000801354318493 0.0105128667638348 -8.6389229103645E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.00490044257124357" />
+      <inertia
+        ixx="2.78904980779558E-07"
+        ixy="-2.01402307191713E-09"
+        ixz="5.24561755329331E-22"
+        iyy="2.74337420831993E-07"
+        iyz="1.32231767941277E-23"
+        izz="3.41986869471006E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lb1_joint"
+    type="revolute">
+    <origin
+      xyz="-0.078471 0.029692 0.055"
+      rpy="1.5708 0 -0.0012908" />
+    <parent
+      link="base_link" />
+    <child
+      link="lb1_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lb2_Link">
+    <inertial>
+      <origin
+        xyz="0.0021471187436435 0.00899417656518443 -0.0442612489263005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0119691777524447" />
+      <inertia
+        ixx="4.40984076977829E-06"
+        ixy="-9.38167224199385E-09"
+        ixz="1.8816442892996E-07"
+        iyy="4.2772333151068E-06"
+        iyz="1.93395846957033E-07"
+        izz="4.50484468381765E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lb2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="0 0.048472 -1.5708" />
+    <parent
+      link="lb1_Link" />
+    <child
+      link="lb2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  <link
+    name="lb3_Link">
+    <inertial>
+      <origin
+        xyz="-7.82890733341673E-05 0.0135354903093429 -0.029113613631381"
+        rpy="0 0 0" />
+      <mass
+        value="0.00636179168831326" />
+      <inertia
+        ixx="3.03427556145382E-06"
+        ixy="3.66847325708018E-14"
+        ixz="-2.46031123605924E-13"
+        iyy="2.94854061067938E-06"
+        iyz="2.41909297965992E-07"
+        izz="1.65256742015732E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/lb3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lb3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065"
+      rpy="0 1.5702 -3.1416" />
+    <parent
+      link="lb2_Link" />
+    <child
+      link="lb3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52" 
+      upper="0.52" 
+      effort="5"
+      velocity="10" />
+  </joint>
+  
+ <transmission name="rf1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rf1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rf1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="rf2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rf2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rf2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="rf3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rf3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rf3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="rm1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rm1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rm1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="rm2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rm2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rm2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+     <transmission name="rm3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rm3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rm3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+<transmission name="rb1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rb1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rb1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+ <transmission name="rb2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rb2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rb2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+ <transmission name="rb3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="rb3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="rb3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+
+
+<transmission name="lf1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lf1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lf1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="lf2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lf2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lf2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="lf3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lf3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lf3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="lm1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lm1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lm1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+    <transmission name="lm2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lm2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lm2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+     <transmission name="lm3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lm3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lm3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+<transmission name="lb1_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lb1_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lb1_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+ <transmission name="lb2_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lb2_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lb2_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+ <transmission name="lb3_trans">
+   <type>SimpleTransmission</type>
+   <joint name="lb3_joint">
+     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="lb3_act">
+     <mechanicalReduction>1</mechanicalReduction> 
+     <hardwareInterface>VelocityJointInterface</hardwareInterface>
+   </actuator>
+ </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/hexapod</robotNamespace>
+    </plugin>
+  </gazebo>
+</robot>

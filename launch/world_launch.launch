@@ -1,0 +1,64 @@
+<launch> 
+
+	<include file= "$(find gazebo_ros)/launch/empty_world.launch"> 
+		<arg name="world_name" value = "$(find hexapod)/world/world1" />
+		
+	</include>
+		
+
+	<param name= "robot_description" command="$(find xacro)/xacro --inorder $(find hexapod)/urdf/hexapod.urdf " />
+
+    <param name = "my_robot" value="hexapod"/> 
+	<arg name ="init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
+    
+
+	<rosparam file="$(find hexapod)/config/config_controllers.yaml" command="load"/> 
+
+
+	<!-- Node for publishing base footprint -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="True"/>
+    </node>
+
+    <!-- Node for launching Rviz -->
+    
+    <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find hexapod)/urdf/hexapod.urdf" /> -->
+	
+
+
+    <!-- TF node that gives the static transformation between the world map and the base link of your robot. Change /base_link to the /root link name of your robot -->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_base" args="1 0 0 0 0 0 1 /map /dummy_link 10" />
+
+
+    <!-- Controller spawner: Starts all the defined controllers with their configs. Just add your controller names defined in your config file into the args tag below   -->
+    <node name="controller_spwaner" pkg="controller_manager" type="spawner" respawn="false"
+    	output="screen" ns="/hexapod" args="joint_state_controller 
+        right_front_1 right_front_2 right_front_3 
+        right_middle_1 right_middle_2 right_middle_3 
+        right_back_1 right_back_2 right_back_3 
+        left_front_1 left_front_2 left_front_3 
+        left_middle_1 left_middle_2 left_middle_3 
+        left_back_1 left_back_2 left_back_3"/>
+
+
+    <!-- A node to publish the robot states onto ros network -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>	
+
+    <!-- A node to spawn the robot into gazebo's world file. Notice that the args has the param robot_description that you previously defined. This is how your robot's spec gets included.-->
+   	<node
+		name="spawn_model"
+		pkg="gazebo_ros"
+		type="spawn_model"
+		args="$(arg init_pose) -param robot_description -urdf -model my_robot"
+		output="screen"/>
+
+
+	<!--Default node -->
+	<node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+
+</launch>
